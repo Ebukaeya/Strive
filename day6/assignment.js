@@ -397,35 +397,87 @@ oldestMovie = (movies)=>{
     movies.forEach(movie =>{
         console.log(lowestMovieYear);
         console.log(movie.Year);
-        parseInt(movie.Year)=== lowestMovieYear ? console.log(movie): console.log("nothing")
+        parseInt(movie.Year)=== lowestMovieYear ?  oldestMovie=movie: console.log("nothing")
 
 
     })
 
-    //console.log(oldestMovie);
+    console.log(oldestMovie);
     
 
 
 
 }
 
-
 oldestMovie(movies)
+
+
 /* EXERCISE 13
     Write a function called countMovies which returns the number of movies contained in the provided movies array.
 */
+
+
+countMovies = (movies)=>{
+
+    return count = movies.length
+}
+
+console.log(countMovies(movies));
+
+
 
 /* EXERCISE 14
     Write a function called onlyTheTitles which creates an array with just the titles of the movies contained in the provided movies array.
 */
 
+onlyTheTitles = (movies)=>{
+      
+    let moviesTitle=[]
+    movies.forEach(movie => {
+        moviesTitle.push(movie.Title)
+    });
+
+    return moviesTitle
+}
+
+console.log(onlyTheTitles(movies))
+
+
 /* EXERCISE 15
    Write a function called onlyInThisMillennium which returns only the movies produced in this millennium from the provided movies array.
 */
+onlyInThisMillennium = (movies)=>{
+
+        moviesWeWant=[   ]
+        count=0
+        movies.forEach(movie => {
+            parseInt(movie.Year)>=2000 ? moviesWeWant.push(movie) : count++
+            
+        });
+
+        console.log(moviesWeWant);
+
+}
+
+onlyInThisMillennium(movies)
+
 
 /* EXERCISE 16 
     Write a function called getMovieById which receives an id as a parameter and returns the movie with the given id from the provided movies array.
 */
+
+getMovieById = (num,movies)=>{
+    let idMatchMovie = {}
+    console.log(movies[0].imdbID);
+
+    movies.forEach((movie)=>{
+        movie.imdbID===num ? idMatchMovie=movie : console.log(num);
+    })
+    return idMatchMovie
+
+}
+
+console.log(getMovieById("tt0120737", movies));
 
 /* EXERCISE 17
     Write a function called sumAllTheYears which returns the sum of all the years in which the movies in the provided movies array have been produced.
