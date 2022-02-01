@@ -289,10 +289,10 @@ onlyLetters([43,3,3,3,"e","d"])
    Write a function called whatDayIsIt that should return the current day of the week.
 */
 
-whatDayIsIt = ()=>{
+let whatDayIsIt = ()=>{
     const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
-    date = new Date();
-    return currentday = weekday[date.getDay()]
+    let date = new Date();
+    return weekday[date.getDay()]
     
 
 }
@@ -343,7 +343,7 @@ console.log(whatDayIsIt());
 */
 
 isTodayMyBirthday = ()=>{
-    let myBirthday = 22/11/1992
+    let myBirthday = "22/11/1992"
 
     date = new Date()
     today = date.toLocaleDateString("en-US")
